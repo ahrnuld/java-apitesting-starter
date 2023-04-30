@@ -1,8 +1,8 @@
-package nl.inholland.les2.services;
+package nl.inholland.apidemo.services;
 
-import nl.inholland.les2.exceptions.InhollandValidationException;
-import nl.inholland.les2.models.Car;
-import nl.inholland.les2.repositories.CarRepository;
+import nl.inholland.apidemo.exceptions.InhollandValidationException;
+import nl.inholland.apidemo.models.Car;
+import nl.inholland.apidemo.repositories.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

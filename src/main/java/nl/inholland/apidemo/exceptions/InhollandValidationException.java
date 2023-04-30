@@ -1,4 +1,4 @@
-package nl.inholland.les2.exceptions;
+package nl.inholland.apidemo.exceptions;
 
 public class InhollandValidationException extends Exception {
 

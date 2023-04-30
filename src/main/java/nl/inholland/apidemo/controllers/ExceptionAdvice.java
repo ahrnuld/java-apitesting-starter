@@ -1,6 +1,6 @@
-package nl.inholland.les2.controllers;
+package nl.inholland.apidemo.controllers;
 
-import nl.inholland.les2.models.ErrorMessage;
+import nl.inholland.apidemo.models.DTO.ErrorDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -11,11 +11,9 @@ import org.springframework.web.context.request.WebRequest;
 public class ExceptionAdvice {
 
         @ExceptionHandler(value = {Exception.class})
-        public ResponseEntity<ErrorMessage> genericException(Exception ex, WebRequest request) {
-            ErrorMessage message = new ErrorMessage(
-                    ex.getMessage());
+        public ResponseEntity<ErrorDTO> genericException(Exception ex, WebRequest request) {
+            ErrorDTO error = new ErrorDTO(ex.getMessage());
 
-            return new ResponseEntity<ErrorMessage>(message, HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<ErrorDTO>(error, HttpStatus.BAD_REQUEST);
         }
-
 }

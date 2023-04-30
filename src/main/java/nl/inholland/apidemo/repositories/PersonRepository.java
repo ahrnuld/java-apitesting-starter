@@ -1,6 +1,6 @@
-package nl.inholland.les2.repositories;
+package nl.inholland.apidemo.repositories;
 
-import nl.inholland.les2.models.Person;
+import nl.inholland.apidemo.models.Person;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

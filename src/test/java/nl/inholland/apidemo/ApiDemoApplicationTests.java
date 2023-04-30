@@ -1,10 +1,10 @@
-package nl.inholland.les2;
+package nl.inholland.apidemo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Les2ApplicationTests {
+class ApiDemoApplicationTests {
 
 	@Test
 	void contextLoads() {

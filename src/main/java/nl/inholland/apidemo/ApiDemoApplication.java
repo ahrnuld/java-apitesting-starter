@@ -1,13 +1,13 @@
-package nl.inholland.les2;
+package nl.inholland.apidemo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Les2Application {
+public class ApiDemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Les2Application.class, args);
+		SpringApplication.run(ApiDemoApplication.class, args);
 	}
 
 }

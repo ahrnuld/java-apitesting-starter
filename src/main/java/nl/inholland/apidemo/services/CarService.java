@@ -1,7 +1,7 @@
-package nl.inholland.les2.services;
+package nl.inholland.apidemo.services;
 
-import nl.inholland.les2.exceptions.InhollandValidationException;
-import nl.inholland.les2.models.Car;
+import nl.inholland.apidemo.exceptions.InhollandValidationException;
+import nl.inholland.apidemo.models.Car;
 
 import java.util.List;
 
