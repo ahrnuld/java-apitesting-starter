@@ -60,7 +60,10 @@ class CarControllerTest {
 
         // Mockito allows us to 'inject' return values for methods we call
         // This way, we don't actually test the service, just the controller
-        when(carService.getAll()).thenReturn(List.of(new Car(1, "Honda", "AB1234", null)));
+        when(carService
+                .getAll())
+                .thenReturn(List.of(
+                        new Car(1, "Honda", 1400, "AB1234", null)));
 
         // Check if we get a 200 OK
         // And if the JSON content matches our expectations
@@ -74,12 +77,20 @@ class CarControllerTest {
     void add() throws Exception {
 
         // Arrange
-        when(carService.add(any(Car.class))).thenReturn(new Car(2, "Mercedes", "CD4567", null));
+        when(carService.add(any(Car.class))).thenReturn(new Car(2, "Mercedes", 2000, "CD4567", null));
 
         // Act & Assert
         this.mockMvc.perform(post("/cars")
-                .contentType(MediaType.APPLICATION_JSON_VALUE)
-                .content("{\"brand\":\"Mercedes\",\"licensePlate\":\"CD4567\"}"))
+                        .contentType(MediaType.APPLICATION_JSON_VALUE)
+                        /// String literals in Java 17: enclose in """
+                        .content("""
+                                 {
+                                    "brand": "Mercedes",
+                                    "weight": 2000,
+                                    "licensePlate": "CD4567"
+                                  }
+                                """))
+                // But since we used any(Car.class) a simple {} should be enough
                 .andDo(print())
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.brand").value("Mercedes"));
