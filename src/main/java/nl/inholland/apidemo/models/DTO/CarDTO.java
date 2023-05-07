@@ -10,6 +10,7 @@ public class CarDTO {
     private long id;
     private String brand;
     private String licensePlate;
+    private int weight;
 
     // The variables below will be automapped :)
     private long ownerId;
